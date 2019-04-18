@@ -17,10 +17,10 @@ def d2(inp):
         p = p * inp[i]
     p = 1
     b = [0]*(len(inp))
-    print(b)
+    #print(b)
     for y in range(len(inp)):
         i = len(inp)-y-1
-        print(i)
+        #print(i)
         b[i] = p
         p = p * inp[i]
     out = [0]*(len(inp))
@@ -28,6 +28,22 @@ def d2(inp):
         out[i] = a[i]*b[i]
     return out
 
+def d2a(inp):
+    p1 = 1
+    p2 = 1
+    a = [0]*(len(inp))
+    b = [0]*(len(inp))
+    for i in range(len(inp)):
+        a[i]=p1
+        p1 = p1 * inp[i]
+        y = len(inp)-i-1
+        b[y]=p2
+        p2 = p2 * inp[y]
+    out = [0]*(len(inp))
+    for i in range(len(inp)):
+        out[i] = a[i]*b[i]
+    return out
+
+
 inp = [3,2,1]
-print(len(inp))
-print(d1(inp))
+print(d2(inp))
