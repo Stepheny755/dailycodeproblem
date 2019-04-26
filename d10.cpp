@@ -1,4 +1,5 @@
 #include <time.h>
+#include <ctime>
 #include <iostream>
 
 #define NSTOMSCONV 10000000
