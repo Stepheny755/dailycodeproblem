@@ -19,11 +19,12 @@ void f(){
 }
 
 int main(){
-  cout << "here1";
+  clock_t start_time = clock();
   if(sleep(1)==1){
     f();
   }
-
-  cout << "here";
+  clock_t done_time = clock();
+  cout << (double)(done_time-start_time)/(CLOCKS_PER_SECOND);
+  cout << (double)(done_time-start_time);
   return 0;
 }
