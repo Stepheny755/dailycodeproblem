@@ -1,7 +1,7 @@
 #include <time.h>
 #include <iostream>
 
-#define NSTOMSCONV 100000
+#define NSTOMSCONV 10000000
 
 using namespace std;
 
@@ -19,7 +19,6 @@ void f(){
 }
 
 int main(){
-
   if(sleep(1)==1){
     f();
   }
