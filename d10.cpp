@@ -1,11 +1,12 @@
 #include <time.h>
+#include <iostream>
 
-#define NSTOMSCONV = 100000
+#define NSTOMSCONV 100000
 
 using namespace std;
 
 int sleep(int dur){
-  struct timspec t1;
+  struct timespec t1;
   t1.tv_nsec=NSTOMSCONV*dur;
   if(nanosleep(&t1,NULL)<0){
     return 0;
