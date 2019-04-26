@@ -2,13 +2,15 @@
 #include <ctime>
 #include <iostream>
 
-#define NSTOMSCONV 10000000
+#define NSTOMSCONV 1000000
 
 using namespace std;
 
 int sleep(int dur){
   struct timespec t1;
+  t1.tv_sec=0;
   t1.tv_nsec=NSTOMSCONV*dur;
+  cout << t1.tv_nsec;
   if(nanosleep(&t1,NULL)<0){
     return 0;
   }
@@ -16,16 +18,21 @@ int sleep(int dur){
 }
 
 void f(){
-  cout << "f";
+  int a = 1;
+  for(int i = 0;i < 1000;i++){
+    a *= 2;
+    cout << a;
+  }
+  cout << "f" << endl;
 }
 
 int main(){
   clock_t start_time = clock();
-  if(sleep(1)==1){
-    f();
-  }
+  
+  sleep(1);
+  f();
   clock_t done_time = clock();
-  cout << (double)(done_time-start_time)/(CLOCKS_PER_SEC);
-  cout << (double)(done_time-start_time);
+  printf("%g",(double)(done_time-start_time));
+  printf("%g",(double)(done_time-start_time)/CLOCKS_PER_SEC);
   return 0;
 }
