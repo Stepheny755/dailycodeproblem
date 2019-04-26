@@ -19,6 +19,7 @@ void f(){
 }
 
 int main(){
+  cout << "here1";
   if(sleep(1)==1){
     f();
   }
