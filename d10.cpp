@@ -25,7 +25,7 @@ int main(){
     f();
   }
   clock_t done_time = clock();
-  cout << (double)(done_time-start_time)/(CLOCKS_PER_SECOND);
+  cout << (double)(done_time-start_time)/(CLOCKS_PER_SEC);
   cout << (double)(done_time-start_time);
   return 0;
 }
