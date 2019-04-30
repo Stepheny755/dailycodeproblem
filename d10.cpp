@@ -28,7 +28,7 @@ void f(){
 
 int main(){
   clock_t start_time = clock();
-  
+
   sleep(1);
   f();
   clock_t done_time = clock();
